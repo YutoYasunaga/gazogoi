@@ -11,6 +11,11 @@ gem 'bootstrap', '~> 4.1.1'
 gem 'jquery-rails'
 gem 'font-awesome-rails'
 gem 'rails-i18n'
+gem 'figaro'
+gem 'devise'
+gem 'devise-i18n'
+gem 'omniauth-facebook'
+gem 'omniauth-twitter'
 
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
