@@ -7,6 +7,8 @@ ruby '2.5.1'
 gem 'rails', '~> 5.2.1'
 
 gem 'slim-rails'
+gem 'bootstrap', '~> 4.1.1'
+gem 'jquery-rails'
 
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
