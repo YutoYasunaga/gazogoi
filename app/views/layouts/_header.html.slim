@@ -9,7 +9,7 @@ header
       #navbar.collapse.navbar-collapse
         ul.navbar-nav.mr-auto
           li.nav-item
-            a.nav-link href='#'
+            = link_to root_path, class: 'nav-link' do
               = fa_icon 'home', text: 'Home'
           li.nav-item
             a.nav-link href='#' Item 2

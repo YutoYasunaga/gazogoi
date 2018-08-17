@@ -1,6 +1,18 @@
 en:
+  activerecord:
+    models:
+    attributes:
+      user:
+        name: 'Name'
+
   menu:
     sign_up: 'Sign up'
     sign_in: 'Sign in'
     sign_out: 'Sign out'
     sign_in_with_facebook: 'Sign in with Facebook'
+
+  form:
+    label:
+      remember_me: 'Remember me'
+    button:
+      reset: 'Reset'
