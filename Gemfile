@@ -10,6 +10,7 @@ gem 'slim-rails'
 gem 'bootstrap', '~> 4.1.1'
 gem 'jquery-rails'
 gem 'font-awesome-rails'
+gem 'rails-i18n'
 
 # Use Puma as the app server
 gem 'puma', '~> 3.11'

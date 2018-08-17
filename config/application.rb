@@ -29,5 +29,8 @@ module Gazogoi
 
     # Don't generate system test files.
     config.generators.system_tests = nil
+    I18n.available_locales = [:en, :vi]
+    config.time_zone = 'Tokyo'
+    config.i18n.default_locale = :en
   end
 end

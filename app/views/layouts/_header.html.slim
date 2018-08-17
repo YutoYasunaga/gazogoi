@@ -14,6 +14,16 @@ header
           li.nav-item
             a.nav-link href='#' Item 2
         ul.navbar-nav.ml-auto
+          li.nav-item
+            - if I18n.locale == :vi
+              = link_to change_language_path(:en), class: 'nav-link' do
+                = image_tag('language/english.png', class: 'select-language')
+                span English
+            - else
+              = link_to change_language_path(:vi), class: 'nav-link' do
+                = image_tag('language/vietnamese.png', class: 'select-language')
+                span Tiếng Việt
+        ul.navbar-nav.ml-auto
           li.nav-item.dropdown
             a class='nav-link dropdown-toggle' href='#' id='navbarDropdown' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false' Dropdown
             div class='dropdown-menu dropdown-menu-right' aria-labelledby='navbarDropdown'
