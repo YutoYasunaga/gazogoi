@@ -1,2 +1,22 @@
-h1 = t('hello')
-= link_to 'Link', '#', class: 'btn btn-success'
+- if admin_signed_in?
+  .admin-panel
+    = link_to new_category_path, remote: true, class: 'btn btn-success' do
+      = fa_icon('plus', text: t('.new_category'))
+
+.row.category-index
+  - @categories.each do |category|
+    .col-xs-12.col-sm-6.col-md-4
+      .card
+        - if admin_signed_in?
+          .card-header.bg-light
+            = link_to edit_category_path(category), remote: true, class: 'btn btn-sm btn-warning' do
+              = fa_icon('edit', text: t('.edit'))
+        = link_to '#' do
+          .card-button
+            .card-body
+              = image_tag(category.image.url)
+            .card-footer.text-success
+              b = eval("category.#{I18n.locale.to_s}")
+
+
+#add-category-modal.modal.fade

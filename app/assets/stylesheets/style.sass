@@ -28,11 +28,34 @@ body
 
 .card
   box-shadow: 5px 5px 5px #CEECF5
+  a
+    text-decoration: none
+  .card-button
+    &:hover
+      box-shadow: 5px 10px 5px #CEF6D8
 
 form
-  #error_explaination
+  #error_explanation
     color: Tomato
   .btn
     margin-right: 10px
   input[type='checkbox']
     margin-right: 5px
+  label
+    margin-right: 5px
+  .actions
+    .btn-right
+      float: right
+
+.category-index
+  .card
+    .card-body
+      padding: 0
+    img
+      width: 100%
+
+.admin-panel
+  .btn
+    margin-bottom: 10px
+
+

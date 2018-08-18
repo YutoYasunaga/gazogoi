@@ -1,0 +1,6 @@
+<% if @category.errors.any? %>
+  $('ul#error_explanation').html('')
+  <% @category.errors.full_messages.each do |message| %>
+    $('ul#error_explanation').append($('<li>').html('<%= message %>'))
+  <% end %>
+<% end %>

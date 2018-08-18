@@ -1,0 +1,30 @@
+.modal-dialog
+  .modal-content
+    .modal-header
+      - if controller.action_name == 'new'
+        h4 = t('categories.new.new_category')
+      - else
+        h4 = t('categories.edit.edit_category')
+    .modal-body
+      = form_for @category, remote: true, authenticity_token: true do |f|
+        ul#error_explanation
+        .form-group
+          = f.label :en
+          = f.text_field :en, autofocus: true, placeholder: 'Countries Name', class: 'form-control'
+        .form-group
+          = f.label :vi
+          = f.text_field :vi, placeholder: 'Tên Các Quốc Gia', class: 'form-control'
+        .form-group
+          = f.label :image
+          = f.file_field :image, accept: 'image/*'
+          - if @category.image.file?
+            = image_tag(@category.image.url, class: 'img-thumbnail')
+        .form-group
+          = f.label :slug
+          = f.text_field :slug, placeholder: 'countries-name', class: 'form-control'
+        .actions
+          = f.button type: :submit, class: 'btn btn-success' do
+            = fa_icon('plus', text: t('form.button.save'))
+          - if controller.action_name == 'edit'
+            = link_to @category, method: :delete, data: { confirm: t('form.message.are_you_sure') }, class: 'btn btn-sm btn-danger btn-right' do
+              = fa_icon('trash', text: t('form.button.delete'))

@@ -30,10 +30,6 @@ class User < ApplicationRecord
     user
   end
 
-  def owner
-    email == 'yuto.yasunaga@gmail.com'
-  end
-
   private
 
   def self.dummy_email(auth)

@@ -4,6 +4,9 @@ en:
     attributes:
       user:
         name: 'Name'
+      category:
+        en: 'English'
+        vi: 'Vietnamese'
 
   menu:
     sign_up: 'Sign up'
@@ -17,3 +20,22 @@ en:
       remember_me: 'Remember me'
     button:
       reset: 'Reset'
+      save: 'Save'
+      delete: 'Delete'
+    message:
+      are_you_sure: 'Are you sure?'
+
+  categories:
+    index:
+      new_category: 'New category'
+      edit: 'Edit'
+    new:
+      new_category: 'New category'
+    edit:
+      edit_category: 'Edit category'
+
+  flash:
+    category:
+      created_category: 'Created category'
+      updated_category: 'Updated category'
+      deleted_category: 'Deleted category'
