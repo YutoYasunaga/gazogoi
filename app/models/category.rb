@@ -1,4 +1,7 @@
 class Category < ApplicationRecord
+  extend FriendlyId
+  friendly_id :slug, use: [:slugged, :finders]
+
   has_attached_file :image, 
     styles: { original: '480x320#' },
     default_style: :original,
@@ -9,4 +12,14 @@ class Category < ApplicationRecord
   validates :en, length: { in: 2..25 }
   validates :vi, length: { in: 2..25 }
   validates :slug, length: { in: 2..25 }
+
+  private
+
+  def slug_candidates
+    "#{slug}"
+  end
+
+  def should_generate_new_friendly_id?
+    slug_changed? || slug.blank?
+  end
 end

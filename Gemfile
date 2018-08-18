@@ -18,6 +18,7 @@ gem 'omniauth-facebook'
 gem 'omniauth-twitter'
 gem 'paperclip'
 gem 'fog'
+gem 'friendly_id'
 
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
