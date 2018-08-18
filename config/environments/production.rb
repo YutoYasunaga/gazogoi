@@ -1,4 +1,17 @@
 Rails.application.configure do
+  config.paperclip_defaults = {
+    use_timestamp: false,
+    url: '/:attachment/:class/:id/:style.:extension',
+    storage: :fog,
+    fog_directory: ENV['FOG_DIRECTORY'],
+    fog_credentials: {
+      provider: :aws,
+      region: 'ap-northeast-1',
+      aws_access_key_id: ENV['AWS_API_KEY'],
+      aws_secret_access_key: ENV['AWS_API_SECRET']
+    }
+  }
+
   # Settings specified here will take precedence over those in config/application.rb.
 
   # Code is not reloaded between requests.

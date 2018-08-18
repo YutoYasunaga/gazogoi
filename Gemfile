@@ -17,6 +17,7 @@ gem 'devise-i18n'
 gem 'omniauth-facebook'
 gem 'omniauth-twitter'
 gem 'paperclip'
+gem 'fog'
 
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
