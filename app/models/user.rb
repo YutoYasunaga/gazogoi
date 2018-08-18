@@ -4,6 +4,13 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable, :omniauthable,
          :recoverable, :rememberable, :validatable
 
+  has_attached_file :avatar, 
+    styles: { original: '50x50#' },
+    default_style: :original,
+    default_url: 'user/default_avatar.png'
+
+  validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\z/
+
   validates :name, presence: true, length: { in: 3..30 }
 
   def self.find_for_oauth(auth)
@@ -13,15 +20,19 @@ class User < ApplicationRecord
       user = User.create(
         uid: auth.uid,
         provider: auth.provider,
+        token: auth.credentials.token,
         email: User.dummy_email(auth),
         password: Devise.friendly_token[0, 20]
       )
     end
 
-    user.update_attributes(
-      name: auth.info.name
-    )
+    user.update_attribute(:name, auth.info.name)
+    user.update_attribute(:avatar, auth.info.image) if auth.info.image
     user
+  end
+
+  def owner
+    email == 'yuto.yasunaga@gmail.com'
   end
 
   private
