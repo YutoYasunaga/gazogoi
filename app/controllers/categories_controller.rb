@@ -6,6 +6,10 @@ class CategoriesController < ApplicationController
     @categories = Category.all.order('en ASC')
   end
 
+  def show
+    @words = @category.words.order('ja')
+  end
+
   def new
     @category = Category.new
   end

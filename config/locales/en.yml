@@ -7,6 +7,11 @@ en:
       category:
         en: 'English'
         vi: 'Vietnamese'
+      word:
+        ja: 'Japanese'
+        furigana: 'Furigana'
+        en: 'English'
+        vi: 'Vietnamese'
 
   menu:
     sign_up: 'Sign up'
@@ -29,10 +34,18 @@ en:
     index:
       new_category: 'New category'
       edit: 'Edit'
+    show:
+      new_word: 'New word'
     new:
       new_category: 'New category'
     edit:
       edit_category: 'Edit category'
+
+  words:
+    new:
+      new_word: 'New word'
+    edit:
+      edit_word: 'Edit word'
 
   flash:
     category:

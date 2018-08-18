@@ -1,4 +1,7 @@
 class Category < ApplicationRecord
+
+  has_many :words, dependent: :destroy
+
   extend FriendlyId
   friendly_id :slug, use: [:slugged, :finders]
 

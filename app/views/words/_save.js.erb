@@ -1,0 +1,6 @@
+<% if @word.errors.any? %>
+  $('ul#error_explanation').html('')
+  <% @word.errors.full_messages.each do |message| %>
+    $('ul#error_explanation').append($('<li>').html('<%= message %>'))
+  <% end %>
+<% end %>
