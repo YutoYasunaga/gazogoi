@@ -2,6 +2,8 @@
   .admin-panel
     = link_to new_category_word_path(@category), remote: true, class: 'btn btn-success' do
       = fa_icon('file', text: t('.new_word'))
+    = link_to edit_category_path(@category), remote: true, class: 'btn btn-warning' do
+      = fa_icon('edit', text: t('.edit_category'))
 
 .row.word-index
   - @words.each do |word|
@@ -10,15 +12,23 @@
         - if admin_signed_in?
           .card-header.bg-light
             = link_to edit_category_word_path(@category, word), remote: true, class: 'btn btn-sm btn-warning' do
-              = fa_icon('edit', text: t('.edit'))
+              = fa_icon('edit', text: t('.word.edit'))
+            = link_to category_word_path(@category, word),
+              method: :delete, data: { confirm: t('message.are_you_sure') }, class: 'btn btn-sm btn-danger btn-right' do
+              = fa_icon('trash', text: t('.word.delete'))
         .card-body
           = image_tag(word.image.url)
         .card-footer
-          = word.ja
-          - if word.furigana.present?
+          .word-text
+            = word.ja
+            - if word.furigana.present?
+              small
+                | （#{word.furigana}）
             br
-            | (#{word.furigana})
-          br
-          b = eval("word.#{I18n.locale.to_s}")
+            b = eval("word.#{I18n.locale.to_s}")
+          .word-voice
+            button.btn.btn-lg.btn-outline-success onclick='responsiveVoice.speak("#{word.ja}", "Japanese Female");'
+              = fa_icon('volume-up')
 
+#category-modal.modal.fade
 #word-modal.modal.fade

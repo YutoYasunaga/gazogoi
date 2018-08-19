@@ -30,6 +30,6 @@
             = image_tag(@word.image.url, class: 'img-thumbnail')
         .actions
           = f.button type: :submit, class: 'btn btn-success' do
-            = fa_icon('plus', text: t('form.button.save'))
+            = fa_icon('save', text: t('form.button.save'))
           = f.button type: :reset, class: 'btn btn-outline-primary' do
             = fa_icon('eraser', text: t('form.button.reset'))

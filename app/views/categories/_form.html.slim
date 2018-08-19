@@ -24,7 +24,7 @@
           = f.text_field :slug, placeholder: 'countries-name', class: 'form-control'
         .actions
           = f.button type: :submit, class: 'btn btn-success' do
-            = fa_icon('plus', text: t('form.button.save'))
+            = fa_icon('save', text: t('form.button.save'))
           - if controller.action_name == 'edit'
-            = link_to @category, method: :delete, data: { confirm: t('form.message.are_you_sure') }, class: 'btn btn-sm btn-danger btn-right' do
+            = link_to @category, method: :delete, data: { confirm: t('message.are_you_sure') }, class: 'btn btn-sm btn-danger btn-right' do
               = fa_icon('trash', text: t('form.button.delete'))

@@ -1,7 +1,7 @@
 header
   nav.navbar.navbar-expand-lg.navbar-dark.bg-success
     .container
-      a.navbar-brand href='#'
+      a.navbar-brand href='/'
         = image_tag 'favicon.ico'
         span Gazogoi
       button class='navbar-toggler' type='button' data-toggle='collapse' data-target='#navbar' aria-controls='navbar' aria-expanded='false' aria-label='Toggle navigation'
@@ -10,9 +10,7 @@ header
         ul.navbar-nav.mr-auto
           li.nav-item
             = link_to root_path, class: 'nav-link' do
-              = fa_icon 'home', text: 'Home'
-          li.nav-item
-            a.nav-link href='#' Item 2
+              = fa_icon 'home', text: t('menu.home')
         ul.navbar-nav.ml-auto
           li.nav-item
             - if I18n.locale == :vi

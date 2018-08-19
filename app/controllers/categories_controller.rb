@@ -17,14 +17,14 @@ class CategoriesController < ApplicationController
   def create
     @category = Category.new(category_params)
     if @category.save
-      redirect_to categories_path
+      redirect_to @category
       flash[:success] = t('flash.category.created_category')
     end
   end
 
   def update
     if @category.update_attributes(category_params)
-      redirect_to categories_path
+      redirect_to @category
       flash[:success] = t('flash.category.updated_category')
     end
   end
