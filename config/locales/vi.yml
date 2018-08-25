@@ -1,2 +1,9 @@
 vi:
-  hello: 'Xin chào thế giới'
+
+  welcome_text:
+    title: 'Chào mừng bạn đến với Gazogoi.com'
+    intro: 'Đây là website nơi bạn có thể học từ vựng tiếng Nhật'
+    features: 'Đặc điểm website'
+    feature1: 'Từ vựng được chia thành nhiều chủ đề'
+    feature2: 'Mỗi từ vựng đều có hình ảnh và phát âm, giúp việc ghi nhớ sẽ dễ hơn'
+    feature3: 'Người dùng đăng nhập có thể đánh dấu từ vựng để xem lại'

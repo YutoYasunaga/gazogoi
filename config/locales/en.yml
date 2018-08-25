@@ -62,3 +62,11 @@ en:
       created_word: 'Created word'
       updated_word: 'Updated word'
       deleted_word: 'Deleted word'
+  
+  welcome_text:
+    title: 'Welcome to Gazogoi.com'
+    intro: 'This is website where you can learn Japanese vocabularies'
+    features: 'Websire features'
+    feature1: 'Words have been grouped into various categories'
+    feature2: 'Words have image and voice, easy to remember'
+    feature3: 'Sign in user can bookmark words to remember later'

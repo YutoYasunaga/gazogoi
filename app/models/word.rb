@@ -1,5 +1,6 @@
 class Word < ApplicationRecord
   belongs_to :category
+  has_many :users, through: :bookmarks
 
   has_attached_file :image, 
     styles: { original: '480x320#' },
