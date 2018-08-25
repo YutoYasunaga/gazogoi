@@ -1,0 +1,6 @@
+- if word.users.exists?(current_user.id)
+  = link_to remove_bookmark_path(word), remote: true, method: :delete, class: 'btn btn-warning' do
+    = fa_icon('minus-square', text: t('bookmark.clear_bookmark'))
+- else
+  = link_to bookmark_path(word), remote: true, class: 'btn btn-info' do
+    = fa_icon('bookmark', text: t('bookmark.bookmark'))

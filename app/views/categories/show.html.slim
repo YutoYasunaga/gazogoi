@@ -26,8 +26,10 @@
                 | （#{word.furigana}）
             br
             b = eval("word.#{I18n.locale.to_s}")
-          .word-voice
-            button.btn.btn-lg.btn-outline-success onclick='responsiveVoice.speak("#{word.ja}", "Japanese Female");'
+          .word-button
+            div id="bookmark-button-#{word.id}" class='bookmark-button'
+              = render 'bookmarks/bookmark_button', word: word
+            button.btn.btn-outline-success.btn-right onclick='responsiveVoice.speak("#{word.ja}", "Japanese Female");'
               = fa_icon('volume-up')
 
 #category-modal.modal.fade

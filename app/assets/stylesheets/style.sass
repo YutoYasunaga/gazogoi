@@ -34,6 +34,13 @@ main
   border-radius: 20px
   padding: 10px
 
+@mixin title()
+  border-left: 5px solid $primary-color
+  border-bottom: 1px solid $primary-color
+  padding: 5px 0 5px 15px
+  margin-bottom: 15px
+  color: blue
+
 aside#user-aside
   #welcome
     h3
@@ -42,13 +49,14 @@ aside#user-aside
       color: gray
     dl
       dt
-        border-left: 5px solid $primary-color
-        border-bottom: 1px solid $primary-color
-        padding: 5px 0 5px 15px
-        margin-bottom: 15px
-        color: blue
+        @include title
       dd
         margin-left: 40px
+  #user-info
+  #bookmark-words
+    .title
+      @include title
+      
 
 .card
   box-shadow: 5px 5px 5px #CEECF5
@@ -84,15 +92,14 @@ form
 .word-index
   .card
     .card-footer
-      height: 90px
       padding: 10px 5px 10px 10px
       .word-text
-        float: left
-        width: 75%
-      .word-voice
-        width: 25%
-        float: right
-        text-align: right
+        height: 90px
+      .word-button
+        .btn
+          max-width: 100%
+        .bookmark-button
+          float: left
 
 .admin-panel
   .btn

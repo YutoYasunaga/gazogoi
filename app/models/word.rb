@@ -1,5 +1,7 @@
 class Word < ApplicationRecord
   belongs_to :category
+
+  has_many :bookmarks
   has_many :users, through: :bookmarks
 
   has_attached_file :image, 
@@ -10,4 +12,5 @@ class Word < ApplicationRecord
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
 
   validates :ja, presence: true
+
 end

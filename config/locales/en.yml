@@ -70,3 +70,8 @@ en:
     feature1: 'Words have been grouped into various categories'
     feature2: 'Words have image and voice, easy to remember'
     feature3: 'Sign in user can bookmark words to remember later'
+
+  bookmark:
+    bookmark_words: 'Bookmark words'
+    bookmark: 'Bookmark'
+    clear_bookmark: 'Clear bookmark'
