@@ -27,8 +27,9 @@
             br
             b = eval("word.#{I18n.locale.to_s}")
           .word-button
-            div id="bookmark-button-#{word.id}" class='bookmark-button'
-              = render 'bookmarks/bookmark_button', word: word
+            - if user_signed_in?
+              div id="bookmark-button-#{word.id}" class='bookmark-button'
+                = render 'bookmarks/bookmark_button', word: word
             button.btn.btn-outline-success.btn-right onclick='responsiveVoice.speak("#{word.ja}", "Japanese Female");'
               = fa_icon('volume-up')
 
