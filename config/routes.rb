@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   get '/change_language/:language', to: 'settings#change_language', as: :change_language
   get '/bookmark/:word_id', to: 'bookmarks#bookmark', as: :bookmark
   delete 'bookmark/:word_id', to: 'bookmarks#remove_bookmark', as: :remove_bookmark
+  get '/show_bookmark/:user_id', to: 'bookmarks#show_bookmark', as: :show_bookmark
 
   resources :categories do
     resources :words, except: :show

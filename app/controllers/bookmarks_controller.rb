@@ -16,4 +16,9 @@ class BookmarksController < ApplicationController
     end
   end
 
+  def show_bookmark
+    @user = User.find(params[:user_id])
+    @words = @user.words.order('ja')
+  end
+
 end

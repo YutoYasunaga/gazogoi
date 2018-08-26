@@ -1,0 +1,4 @@
+h4.page-title = t('.user_bookmark', user: @user.name)
+#bookmark-words
+  table.table
+    = render partial: 'words/bookmark_word', collection: @words, as: :word

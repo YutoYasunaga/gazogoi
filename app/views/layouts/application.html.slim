@@ -23,7 +23,7 @@ html
           = render 'layouts/flash_message'
           = yield
         / User aside
-        = render 'layouts/user_aside'
+        = render 'layouts/user_aside' unless controller.action_name == 'show_bookmark'
 
     / Footer
     = render 'layouts/footer'
