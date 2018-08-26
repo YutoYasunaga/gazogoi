@@ -38,8 +38,13 @@ en:
   bookmarks:
     show_bookmark:
       user_bookmark: "%{user}'s bookmark"
-  words:
+    bookmark_words: 'Bookmark words'
+    button:
+      bookmark: 'Bookmark'
+      clear_bookmark: 'Clear bookmark'
 
+  messages:
+    are_you_sure: 'Are you sure?'
   
   welcome_text:
     title: 'Welcome to Gazogoi.com'
@@ -50,6 +55,3 @@ en:
     feature3: 'Sign in user can bookmark words to remember later'
 
   bookmark:
-    bookmark_words: 'Bookmark words'
-    bookmark: 'Bookmark'
-    clear_bookmark: 'Clear bookmark'

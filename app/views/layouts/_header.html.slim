@@ -33,7 +33,7 @@ header
                   = fa_icon('cog', text: t('menu.account_setting'))
                 .dropdown-divider
                 = link_to destroy_user_session_path,
-                  method: :delete, data: { confirm: 'Are you sure?' }, class: 'dropdown-item' do
+                  method: :delete, data: { confirm: t('messages.are_you_sure') }, class: 'dropdown-item' do
                   = fa_icon('sign-out', text: t('menu.sign_out'))
           - else
             li.nav-item

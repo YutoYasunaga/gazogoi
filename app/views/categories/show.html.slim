@@ -1,3 +1,5 @@
+- provide(:title, eval("@category.#{I18n.locale}"))
+
 h3.page-title = eval("@category.#{I18n.locale}")
 
 - if admin_signed_in?
