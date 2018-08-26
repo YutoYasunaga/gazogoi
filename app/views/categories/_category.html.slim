@@ -10,3 +10,4 @@
           = image_tag(category.image.url)
         .card-footer.text-success
           b = eval("category.#{I18n.locale.to_s}")
+          .pull-right.badge.badge-pill.badge-warning = t('categories.index.words_count', words_count: category.words.count)

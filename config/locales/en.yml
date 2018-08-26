@@ -33,6 +33,7 @@ en:
   categories:
     index:
       categories_list: 'Categories list'
+      words_count: '%{words_count} words'
     show:
 
   bookmarks:
