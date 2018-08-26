@@ -1,0 +1,12 @@
+.col-xs-12.col-sm-6.col-md-4
+  .card.category
+    - if admin_signed_in?
+      .card-header.bg-light
+        = link_to edit_category_path(category), remote: true, class: 'btn btn-sm btn-warning' do
+          = fa_icon('edit', text: t('.edit'))
+    = link_to category do
+      .card-button
+        .card-body
+          = image_tag(category.image.url)
+        .card-footer.text-success
+          b = eval("category.#{I18n.locale.to_s}")

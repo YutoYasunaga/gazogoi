@@ -1,0 +1,14 @@
+#admin-panel.card
+  .card-header.bg-danger.text-white
+    h4 Admin panel
+  .card-body
+    = link_to new_category_path, remote: true, class: 'btn btn-primary' do
+      = fa_icon('list-ul', text: 'New category')
+    - if controller.action_name == 'index'
+      = link_to new_category_word_path(Category.first), remote: true, class: 'btn btn-info' do
+        = fa_icon('file', text: 'New word')
+    - elsif controller.action_name == 'show'
+      = link_to edit_category_path(@category), remote: true, class: 'btn btn-warning' do
+        = fa_icon('edit', text: 'Edit category')
+      = link_to new_category_word_path(@category), remote: true, class: 'btn btn-info' do
+        = fa_icon('file', text: 'New word')

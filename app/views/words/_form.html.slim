@@ -2,34 +2,34 @@
   .modal-content
     .modal-header
       - if controller.action_name == 'new'
-        h4 = t('words.new.new_word')
+        h4 New word
       - else
-        h4 = t('words.edit.edit_word')
+        h4 Edit word
     .modal-body
       = form_for [@category, @word], remote: true, authenticity_token: true do |f|
         ul#error_explanation
         .form-group
-          = f.label :category_id
+          = f.label :category_id, 'Category'
           = f.collection_select :category_id, Category.order('en'), :id, :en, { selected: @category.id }
         .form-group
-          = f.label :ja
+          = f.label :ja, 'Japanese'
           = f.text_field :ja, autofocus: true, placeholder: '日本', class: 'form-control'
         .form-group
-          = f.label :furigana
+          = f.label :furigana, 'Furigana'
           = f.text_field :furigana, placeholder: 'にほん', class: 'form-control'
         .form-group
-          = f.label :en
+          = f.label :en, 'English'
           = f.text_field :en, placeholder: 'Japan', class: 'form-control'
         .form-group
-          = f.label :vi
+          = f.label :vi, 'Vietnamese'
           = f.text_field :vi, placeholder: 'Nhật Bản', class: 'form-control'
         .form-group
-          = f.label :image
+          = f.label :image, 'Image'
           = f.file_field :image, accept: 'image/*'
           - if @word.image.file?
             = image_tag(@word.image.url, class: 'img-thumbnail')
         .actions
           = f.button type: :submit, class: 'btn btn-success' do
-            = fa_icon('save', text: t('form.button.save'))
+            = fa_icon('save', text: 'Save')
           = f.button type: :reset, class: 'btn btn-outline-primary' do
-            = fa_icon('eraser', text: t('form.button.reset'))
+            = fa_icon('eraser', text: 'Reset')

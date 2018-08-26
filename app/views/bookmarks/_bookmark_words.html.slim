@@ -1,15 +1,4 @@
 #bookmark-words
-  - if current_user.words.any?
-    h5.title = t('bookmark.bookmark_words')
-    table.table.table-striped
-      - current_user.words.each do |word|
-        tr
-          td
-            = word.ja
-            - if word.furigana.present?
-              br
-              small （#{word.furigana}）
-            br
-            = render 'bookmarks/bookmark_button', word: word
-          td
-            = eval("word.#{I18n.locale}")
+  h5.title = t('bookmark.bookmark_words')
+  table.table.table-striped
+    = render partial: 'words/bookmark_word', collection: current_user.words, as: :word

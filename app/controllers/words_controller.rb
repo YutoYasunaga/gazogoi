@@ -13,21 +13,21 @@ class WordsController < ApplicationController
     @word = Word.new(word_params)
     if @word.save
       redirect_to @word.category
-      flash[:success] = t('flash.word.created_word')
+      flash[:success] = 'Created word!'
     end
   end
 
   def update
     if @word.update_attributes(word_params)
       redirect_to @category
-      flash[:success] = t('flash.word.updated_word')
+      flash[:success] = 'Updated word!'
     end
   end
 
   def destroy
     if @word.destroy
       redirect_to @category
-      flash[:success] = t('flash.word.deleted_word')
+      flash[:success] = 'Deleted word!'
     end
   end
 

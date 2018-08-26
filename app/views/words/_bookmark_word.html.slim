@@ -1,0 +1,13 @@
+tr.bookmark-word
+  td
+    = word.ja
+    - if word.furigana.present?
+      br
+      small （#{word.furigana}）
+  td
+    = eval("word.#{I18n.locale}")
+    br
+    button.btn.btn-sm.btn-outline-success onclick='responsiveVoice.speak("#{word.ja}", "Japanese Female");'
+      = fa_icon('volume-up')
+    = link_to remove_bookmark_path(word), remote: true, method: :delete, class: 'btn btn-sm btn-outline-warning btn-right' do
+      = fa_icon('trash')

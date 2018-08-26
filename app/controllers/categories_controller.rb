@@ -18,21 +18,21 @@ class CategoriesController < ApplicationController
     @category = Category.new(category_params)
     if @category.save
       redirect_to @category
-      flash[:success] = t('flash.category.created_category')
+      flash[:success] = 'Created category!'
     end
   end
 
   def update
     if @category.update_attributes(category_params)
       redirect_to @category
-      flash[:success] = t('flash.category.updated_category')
+      flash[:success] = 'Updated category!'
     end
   end
 
   def destroy
     if @category.destroy
       redirect_to categories_path
-      flash[:success] = t('flash.category.deleted_category')
+      flash[:success] = 'Deleted category!'
     end
   end
 

@@ -2,29 +2,29 @@
   .modal-content
     .modal-header
       - if controller.action_name == 'new'
-        h4 = t('categories.new.new_category')
+        h4 New category
       - else
-        h4 = t('categories.edit.edit_category')
+        h4 Edit category
     .modal-body
       = form_for @category, remote: true, authenticity_token: true do |f|
         ul#error_explanation
         .form-group
-          = f.label :en
+          = f.label :en, 'English'
           = f.text_field :en, autofocus: true, placeholder: 'Countries Name', class: 'form-control'
         .form-group
-          = f.label :vi
+          = f.label :vi, 'Vietnamese'
           = f.text_field :vi, placeholder: 'Tên Các Quốc Gia', class: 'form-control'
         .form-group
-          = f.label :image
+          = f.label :image, 'Image'
           = f.file_field :image, accept: 'image/*'
           - if @category.image.file?
             = image_tag(@category.image.url, class: 'img-thumbnail')
         .form-group
-          = f.label :slug
+          = f.label :slug, 'Slug'
           = f.text_field :slug, placeholder: 'countries-name', class: 'form-control'
         .actions
           = f.button type: :submit, class: 'btn btn-success' do
-            = fa_icon('save', text: t('form.button.save'))
+            = fa_icon('save', text: 'Save')
           - if controller.action_name == 'edit'
-            = link_to @category, method: :delete, data: { confirm: t('message.are_you_sure') }, class: 'btn btn-sm btn-danger btn-right' do
-              = fa_icon('trash', text: t('form.button.delete'))
+            = link_to @category, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-right' do
+              = fa_icon('trash', text: 'Delete')

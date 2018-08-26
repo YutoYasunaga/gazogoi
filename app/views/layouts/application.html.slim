@@ -1,8 +1,7 @@
 doctype html
 html
   head
-    title
-      | Gazogoi
+    title = full_title(yield(:title))
     = csrf_meta_tags
     = csp_meta_tag
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
@@ -12,42 +11,19 @@ html
     script src='https://code.responsivevoice.org/responsivevoice.js'
 
   body
+
+    / Header
     = render 'layouts/header'
+
     .container
       .row
-
+        / Main
         main.col-xs-12.col-md-9
           / Flash message
-          - flash.each do |key, value|
-            - if key == 'notice'
-              - key = 'success'
-            - elsif key == 'alert'
-              - key = 'danger'
-            div class="alert alert-#{key}"
-              button type='button' class='close' data-dismiss='alert' &times;
-              = value.html_safe
+          = render 'layouts/flash_message'
           = yield
+        / User aside
+        = render 'layouts/user_aside'
 
-        aside#user-aside.d-sm-none.d-md-block.col-md-3
-          - if user_signed_in?
-            = render 'bookmarks/bookmark_words'
-
-          - else
-            #welcome
-              h3 = t('welcome_text.title')
-              b = t('welcome_text.intro')
-              hr
-              dl
-                dt = t('welcome_text.features')
-                dd = t('welcome_text.feature1')
-                dd = t('welcome_text.feature2')
-                dd = t('welcome_text.feature3')
-
-              = link_to new_user_registration_path do
-                = fa_icon('user-plus', text: t('menu.sign_up'))
-              br
-              = link_to new_user_session_path do
-                = fa_icon('sign-in', text: t('menu.sign_in'))
-              br
-              = link_to user_facebook_omniauth_authorize_path do
-                = fa_icon('facebook-square', text: t('menu.sign_in_with_facebook'))
+    / Footer
+    = render 'layouts/footer'

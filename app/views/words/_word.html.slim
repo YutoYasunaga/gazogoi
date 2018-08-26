@@ -1,0 +1,25 @@
+.col-xs-12.col-sm-6.col-md-4
+  .card.word
+    - if admin_signed_in?
+      .card-header.bg-light
+        = link_to edit_category_word_path(word.category, word), remote: true, class: 'btn btn-sm btn-warning' do
+          = fa_icon('edit', text: 'Edit')
+        = link_to category_word_path(word.category, word),
+          method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-sm btn-danger btn-right' do
+          = fa_icon('trash', text: 'Delete')
+    .card-body
+      = image_tag(word.image.url)
+    .card-footer
+      .word-text
+        = word.ja
+        - if word.furigana.present?
+          small
+            | （#{word.furigana}）
+        br
+        b = eval("word.#{I18n.locale.to_s}")
+      .word-button
+        - if user_signed_in?
+          div id="bookmark-button-#{word.id}" class='bookmark-button'
+            = render 'bookmarks/bookmark_button', word: word
+        button.btn.btn-outline-success.btn-right onclick='responsiveVoice.speak("#{word.ja}", "Japanese Female");'
+          = fa_icon('volume-up')

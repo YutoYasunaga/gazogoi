@@ -29,39 +29,13 @@ en:
       save: 'Save'
       delete: 'Delete'
 
-  message:
-    are_you_sure: 'Are you sure?'
-
   categories:
     index:
-      new_category: 'New category'
-      edit: 'Edit'
+      categories_list: 'Categories list'
     show:
-      new_word: 'New word'
-      edit_category: 'Edit category'
-      word:
-        edit: 'Edit'
-        delete: 'Delete'
-    new:
-      new_category: 'New category'
-    edit:
-      edit_category: 'Edit category'
 
   words:
-    new:
-      new_word: 'New word'
-    edit:
-      edit_word: 'Edit word'
 
-  flash:
-    category:
-      created_category: 'Created category'
-      updated_category: 'Updated category'
-      deleted_category: 'Deleted category'
-    word:
-      created_word: 'Created word'
-      updated_word: 'Updated word'
-      deleted_word: 'Deleted word'
   
   welcome_text:
     title: 'Welcome to Gazogoi.com'

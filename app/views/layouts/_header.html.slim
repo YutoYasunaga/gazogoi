@@ -24,7 +24,7 @@ header
         ul.navbar-nav.ml-auto
           - if user_signed_in?
             li.nav-item.dropdown
-              = image_tag(current_user.avatar.url, class: 'user-avatar')
+              = image_tag(current_user.avatar.url, class: 'rounded-circle user-avatar')
               a class='nav-link dropdown-toggle user-name' href='#' id='navbarDropdown' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false' = current_user.name
               div class='dropdown-menu dropdown-menu-right' aria-labelledby='navbarDropdown'
                 = link_to edit_user_registration_path(current_user), class: 'dropdown-item' do
