@@ -1,9 +1,61 @@
 vi:
+  
+  #activerecord:
+  #  models:
+  #  attributes:
+  #    user:
+  #      name: 'Name'
+  #      email: 'Email'
+  #      avatar: 'Avatar'
+  #    category:
+  #      en: 'English'
+  #      vi: 'Vietnamese'
+  #      image: 'Image'
+  #    word:
+  #      ja: 'Japanese'
+  #      furigana: 'Furigana'
+  #      en: 'English'
+  #      vi: 'Vietnamese'
+  #      image: 'Image'
 
+  menu:
+    home: 'Trang chủ'
+    sign_up: 'Đăng ký'
+    sign_in: 'Đăng nhập'
+    sign_out: 'Đăng xuất'
+    sign_in_with_facebook: 'Đăng nhập bằng Facebook'
+    my_bookmark: 'Đánh dấu của tôi'
+    account_setting: 'Cài đặt tài khoản'
+
+  form:
+    label:
+      remember_me: 'Ghi nhớ đăng nhập'
+    button:
+      reset: 'Làm lại'
+      save: 'Lưu'
+      delete: 'Xóa'
+
+  categories:
+    index:
+      categories_list: 'Danh sách chủ đề'
+      words_count: '%{words_count} từ'
+    show:
+
+  bookmarks:
+    show_bookmark:
+      user_bookmark: "Từ đã đánh dấu của %{user}"
+    bookmark_words: 'Từ đã đánh dấu'
+    button:
+      bookmark: 'Đánh dấu'
+      clear_bookmark: 'Bỏ đánh dấu'
+
+  messages:
+    are_you_sure: 'Bạn chắc chưa?'
+  
   welcome_text:
-    title: 'Chào mừng bạn đến với Gazogoi.com'
-    intro: 'Đây là website nơi bạn có thể học từ vựng tiếng Nhật'
-    features: 'Đặc điểm website'
-    feature1: 'Từ vựng được chia thành nhiều chủ đề'
-    feature2: 'Mỗi từ vựng đều có hình ảnh và phát âm, giúp việc ghi nhớ sẽ dễ hơn'
-    feature3: 'Người dùng đăng nhập có thể đánh dấu từ vựng để xem lại'
+    title: 'Chào mừng bạn đến Gazogoi.com'
+    intro: 'Đây là trang web bạn có thể học từ vựng tiếng Nhật'
+    features: 'Tính năng của trang web'
+    feature1: 'Từ vựng được chia thành các chủ đề'
+    feature2: 'Mỗi từ đều có hình ảnh và giọng phát âm, giúp dễ ghi nhớ'
+    feature3: 'Người dùng đăng nhập có thể đánh dấu từng vựng để ghi nhớ sau này'

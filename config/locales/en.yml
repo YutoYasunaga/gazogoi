@@ -1,17 +1,22 @@
 en:
-  activerecord:
-    models:
-    attributes:
-      user:
-        name: 'Name'
-      category:
-        en: 'English'
-        vi: 'Vietnamese'
-      word:
-        ja: 'Japanese'
-        furigana: 'Furigana'
-        en: 'English'
-        vi: 'Vietnamese'
+  
+  #activerecord:
+  #  models:
+  #  attributes:
+  #    user:
+  #      name: 'Name'
+  #      email: 'Email'
+  #      avatar: 'Avatar'
+  #    category:
+  #      en: 'English'
+  #      vi: 'Vietnamese'
+  #      image: 'Image'
+  #    word:
+  #      ja: 'Japanese'
+  #      furigana: 'Furigana'
+  #      en: 'English'
+  #      vi: 'Vietnamese'
+  #      image: 'Image'
 
   menu:
     home: 'Home'
@@ -54,5 +59,3 @@ en:
     feature1: 'Words have been grouped into various categories'
     feature2: 'Words have image and voice, easy to remember'
     feature3: 'Sign in user can bookmark words to remember later'
-
-  bookmark:
