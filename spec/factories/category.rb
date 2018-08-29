@@ -1,7 +1,7 @@
 FactoryGirl.define do
   factory :category do
-    en { Faker::IndustrySegments.industry }
-    vi { Faker::IndustrySegments.industry }
+    en { Faker::Construction.material }
+    vi { Faker::Construction.material }
     slug { Faker::Internet.slug }
   end
 end
