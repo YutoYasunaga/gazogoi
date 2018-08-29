@@ -5,7 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :bookmarks
-  has_many :words, through: :bookmarks
+  has_many :words, through: :bookmarks, dependent: :nullify
 
   has_attached_file :avatar, 
     styles: { original: '50x50#' },
