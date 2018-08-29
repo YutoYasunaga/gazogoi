@@ -1,7 +1,7 @@
 class Word < ApplicationRecord
   belongs_to :category
 
-  has_many :bookmarks
+  has_many :bookmarks, dependent: :destroy
   has_many :users, through: :bookmarks
 
   has_attached_file :image, 
