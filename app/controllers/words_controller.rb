@@ -1,5 +1,6 @@
 class WordsController < ApplicationController
   before_action :set_word, only: [:edit, :update, :destroy]
+  before_action :check_admin
 
   def new
     @category = Category.find(params[:category_id])

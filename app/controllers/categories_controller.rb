@@ -1,6 +1,7 @@
 class CategoriesController < ApplicationController
 
   before_action :set_category, only: [:show, :edit, :update, :destroy]
+  before_action :check_admin, except: [:index, :show]
   
   def index
     @categories = Category.all.order('en ASC')
