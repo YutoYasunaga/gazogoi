@@ -12,8 +12,8 @@ class Category < ApplicationRecord
 
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
 
-  validates :en, presence: true, length: { in: 2..25 }
-  validates :vi, presence: true, length: { in: 2..25 }
+  validates :en, presence: true, length: { in: 2..25 }, uniqueness: true
+  validates :vi, presence: true, length: { in: 2..25 }, uniqueness: true
 
   private
 

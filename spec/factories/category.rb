@@ -1,8 +1,12 @@
-FactoryGirl.define do
+require 'ffaker'
+
+FactoryBot.define do
+
   factory :category do
-    en { Faker::Construction.material }
-    vi { Faker::Construction.material }
-    slug { Faker::Internet.slug }
+    en { FFaker::Name.name }
+    vi { FFaker::NameVN.name }
+    sequence(:slug) { |n| "#{FFaker::Internet.slug}-#{n}" }
   end
+
 end
 
