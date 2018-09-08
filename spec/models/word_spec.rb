@@ -1,22 +1,45 @@
 require 'rails_helper'
 
-RSpec.describe Word, type: :model do
+describe Word, type: :model do
 
-  describe 'db schema' do
-    context 'columns' do
-      it { should have_db_column(:ja).of_type(:string) }
-      it { should have_db_column(:furigana).of_type(:string) }
-      it { should have_db_column(:en).of_type(:string) }
-      it { should have_db_column(:vi).of_type(:string) }
-    end
+  before(:all) do
+    example_category = FactoryBot.create(:category)
+    @example_word = example_category.words.create(
+      ja: '日本',
+      furigana: 'にほん',
+      en: 'Japan',
+      vi: 'Nhật Bản'
+    )
   end
 
-  describe 'validations' do
-    it { should validate_presence_of(:ja) }
+  it 'has a valid factory' do
+    expect(FactoryBot.build(:word)).to be_valid
   end
 
-  describe 'associations' do
-    it { should belong_to(:category) }
+  it 'is valid with a Japanese, Furigana, English, Vietnamese' do
+    expect(@example_word).to be_valid
+  end
+
+  it 'is invalid without a Japanese' do
+    word = FactoryBot.build(:word, ja: nil)
+    word.valid?
+    expect(word.errors[:ja]).to include("can't be blank")
+  end
+
+  it 'does not allow duplicate word Japanese per category' do
+    category = FactoryBot.create(:category)
+    word1 = FactoryBot.create(:word, category_id: category.id, ja: '英語')
+    word2 = FactoryBot.build(:word, category_id: category.id, ja: '英語')
+    word2.valid?
+    expect(word2.errors[:ja]).to include('has already been taken')
+  end
+
+  it 'allow two categories to share a word Japanese' do
+    category1 = FactoryBot.create(:category)
+    category2 = FactoryBot.create(:category)
+    word1 = FactoryBot.create(:word, category_id: category1.id, ja: '中国')
+    word2 = FactoryBot.build(:word, category_id: category2.id, ja: '中国')
+    expect(word2).to be_valid
   end
 
 end

@@ -11,6 +11,6 @@ class Word < ApplicationRecord
 
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
 
-  validates :ja, presence: true
+  validates :ja, presence: true, uniqueness: { scope: :category_id }
 
 end
