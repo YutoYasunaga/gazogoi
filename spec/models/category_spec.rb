@@ -2,7 +2,7 @@ require 'rails_helper'
 
 describe Category, type: :model do
   before do
-    @first_category = Category.create(
+    @example_category = Category.create(
       en: 'Animals',
       vi: 'Động Vật',
       slug: 'animals'
@@ -14,7 +14,7 @@ describe Category, type: :model do
   end
 
   it 'is valid with a English title, Vietnamese title' do
-    expect(@first_category).to be_valid
+    expect(@example_category).to be_valid
   end
 
   it 'is invalid without a English title' do
