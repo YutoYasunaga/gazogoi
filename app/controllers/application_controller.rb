@@ -8,6 +8,8 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  private
+
   def set_language
     if cookies[:language]
       l = cookies[:language].to_sym
