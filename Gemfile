@@ -20,6 +20,7 @@ gem 'paperclip'
 gem 'fog'
 gem 'friendly_id'
 gem 'kaminari'
+gem 'lazyload-rails'
 
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
