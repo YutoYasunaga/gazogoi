@@ -1,7 +1,7 @@
 module ApplicationHelper
 
   def full_title(page_title = '')
-    base_title = 'Gazogoi - 画像で語彙を覚える'
+    base_title = 'Tiếng Nhật Bằng Hình Ảnh'
     if page_title.empty?
       base_title
     else

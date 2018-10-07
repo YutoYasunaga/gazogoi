@@ -8,7 +8,7 @@ class CategoriesController < ApplicationController
   end
 
   def show
-    @words = @category.words.order('ja')
+    @words = @category.words.order('ja').page params[:page]
   end
 
   def new

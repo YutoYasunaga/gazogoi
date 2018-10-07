@@ -13,4 +13,6 @@ class Word < ApplicationRecord
 
   validates :ja, presence: true, uniqueness: { scope: :category_id }
 
+  paginates_per 12
+
 end

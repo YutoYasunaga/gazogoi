@@ -39,6 +39,6 @@ module Gazogoi
     config.generators.system_tests = nil
     I18n.available_locales = [:en, :vi]
     config.time_zone = 'Tokyo'
-    config.i18n.default_locale = :en
+    config.i18n.default_locale = :vi
   end
 end
