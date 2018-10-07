@@ -22,8 +22,9 @@ gem 'friendly_id'
 gem 'kaminari'
 gem 'lazyload-rails'
 
-# Use Puma as the app server
-gem 'puma', '~> 3.11'
+# Use Unicorn as the app server
+gem 'unicorn'
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
