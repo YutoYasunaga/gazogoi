@@ -20,7 +20,7 @@ gem 'paperclip'
 gem 'fog'
 gem 'friendly_id'
 gem 'kaminari'
-gem 'lazyload-rails'
+gem 'jquery-turbolinks'
 
 # Use Unicorn as the app server
 gem 'unicorn'

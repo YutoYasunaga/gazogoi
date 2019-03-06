@@ -14,4 +14,14 @@ module ApplicationHelper
       return true
     end
   end
+
+  def lazy_image_tag(source, options={})
+    options['data-src'] = asset_path(source)
+    if options[:class].blank?
+      options[:class] = 'lazyestload'
+    else
+      options[:class] = "lazyestload #{options[:class]}"
+    end
+    image_tag('lazyload.gif', options)
+  end
 end

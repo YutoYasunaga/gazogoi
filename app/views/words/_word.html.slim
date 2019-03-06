@@ -8,7 +8,7 @@
           method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-sm btn-danger btn-right' do
           = fa_icon('trash', text: 'Delete')
     .card-body
-      = image_tag(word.image.url, lazy: true)
+      = lazy_image_tag(word.image.url)
     .card-footer
       .word-text
         = word.ja
