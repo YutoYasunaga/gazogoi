@@ -27,3 +27,13 @@ html
 
     / Footer
     = render 'layouts/footer'
+
+    / Lazyload from "https://github.com/verlok/lazyload"
+    javascript:
+      var lazyLoadInstance = new LazyLoad({
+          elements_selector: ".lazy"
+      });
+      if (lazyLoadInstance) {
+          lazyLoadInstance.update();
+      }
+

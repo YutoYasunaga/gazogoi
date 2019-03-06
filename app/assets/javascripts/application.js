@@ -3,4 +3,6 @@
 //= require jquery.turbolinks
 //= require popper
 //= require bootstrap-sprockets
-//= require lazyestload
+//= require lazyload
+
+
